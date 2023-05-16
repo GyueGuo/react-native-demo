@@ -9,18 +9,19 @@ const screenOptions = {
 }
 export default () => (
   <NavigationContainer>
-    <Stack.Navigator initialRouteName='home/index'>
+    <Stack.Navigator
+      initialRouteName='home/index'
+      screenOptions={{ headerShown: false }}
+    >
       {
         routes.map((item) => {
           return (
             <Stack.Screen
               key={item.name}
               name={item.name}
-              component={item.component}
-              options={({ route }) => ({
-                headerShown: false, //不显示头部标题
-              })}
-            />
+            >
+              { item.component }
+            </Stack.Screen>
           )
         })
       }

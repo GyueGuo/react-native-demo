@@ -1,24 +1,26 @@
 import React from 'react';
-import { SafeAreaView, Text, StyleSheet, Button } from 'react-native'
-const Index = ({ navigation}) => {
-    const handleGoUser = () => {
-        navigation.navigate('home/user')
-    };
-    return (
-        <SafeAreaView style={styles.view}>
-                <Text>index</Text>
-                <Button 
-                    onPress={handleGoUser} 
-                    title="Go user">
-                </Button>
-        </SafeAreaView>
-    );
+import { SafeAreaView, Text, Button } from 'react-native'
+import AdaptStyleSheet from '../../../../utils/adaptStyleSheet';
+
+const Index = ({ navigation }) => {
+  const handleGoUser = () => {
+    navigation.navigate('home/user')
+  };
+  return (
+    <SafeAreaView style={styles.view}>
+      <Text>index</Text>
+      <Button
+        onPress={handleGoUser}
+        title="Go user">
+      </Button>
+    </SafeAreaView>
+  );
 };
 
-const styles = StyleSheet.create({
-    view: {
-        fontSize: 20,
-        color: 'red',
-    }
+const styles = AdaptStyleSheet.create({
+  view: {
+    fontSize: 20,
+    color: 'red',
+  }
 })
 export default Index

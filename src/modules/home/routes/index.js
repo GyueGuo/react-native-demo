@@ -9,7 +9,7 @@ function component() {
     <Tab.Navigator>
       {routes.map(router => (
         <Tab.Screen
-          name={router.name}
+          name={router.title}
           component={router.component}
           key={router.name}
           options={router.options}

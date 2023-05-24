@@ -1,12 +1,13 @@
 import React from 'react';
-import { SafeAreaView, Text, StyleSheet } from 'react-native'
+import { SafeAreaView, Text } from 'react-native'
+import AdaptStyleSheet from '../../../../utils/adaptStyleSheet';
 const Index = () => (
-    <SafeAreaView style={styles.view}><Text>user-setting</Text></SafeAreaView>
+  <SafeAreaView style={styles.view}><Text>user-setting</Text></SafeAreaView>
 )
 
-const styles = StyleSheet.create({
-    view: {
-        fontSize: 20,
-    }
+const styles = AdaptStyleSheet.create({
+  view: {
+    fontSize: 20,
+  }
 })
 export default Index

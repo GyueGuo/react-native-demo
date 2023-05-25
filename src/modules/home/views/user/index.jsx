@@ -1,7 +1,8 @@
-import React, { useCallback, useState } from 'react';
-import { SafeAreaView, View, TouchableWithoutFeedback, Image } from 'react-native'
+import React, { useCallback, useMemo, useState } from 'react';
+import { View, TouchableWithoutFeedback, Image, Alert } from 'react-native'
 import AdaptStyleSheet from '../../../../utils/adaptStyleSheet';
 
+import Navigator, { navigatorHeight } from '../../../../components/navigator';
 import Text from '../../../../components/text';
 import Dialog from '../../../../components/dialog';
 
@@ -17,14 +18,25 @@ const User = ({ navigation }) => {
 
   const handleLogout = useCallback(() => {
     setIsDialogVisible(true)
+    // Alert.alert('确定退出登录？', '', [
+    //   { text: '取消', style: 'cancel' },
+    //   {
+    //     text: '确认',
+    //     onPress: () => {
+    //     },
+    //   },
+    // ])
   }, [navigation]);
 
   const handleDialogClose = useCallback(() => {
     setIsDialogVisible(false);
   }, []);
-
+  const wrapStyles = useMemo(() => ({
+    paddingTop: navigatorHeight,
+  }), []);
   return (
-    <SafeAreaView>
+    <View style={wrapStyles}>
+      <Navigator isLeftVisible={false} title="我的"/>
       <View style={ styles.infoWrap }>
         <Image source={defaultAvatar} style={styles.avatar} />
         <Text style={styles.nickname}>昵称</Text>
@@ -51,7 +63,7 @@ const User = ({ navigation }) => {
         title="确定退出登录？"
         // content="退出后续重新登录"
       />
-    </SafeAreaView>
+    </View>
   )
 }
 const styles = AdaptStyleSheet.create({

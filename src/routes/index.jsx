@@ -9,19 +9,15 @@ const screenOptions = {
 }
 export default () => (
   <NavigationContainer>
-    <Stack.Navigator
-      initialRouteName='home/index'
-      screenOptions={{ headerShown: false }}
-    >
+    <Stack.Navigator screenOptions={screenOptions}>
       {
         routes.map((item) => {
           return (
             <Stack.Screen
               key={item.name}
               name={item.name}
-            >
-              { item.component }
-            </Stack.Screen>
+              component={item.component}
+            />
           )
         })
       }

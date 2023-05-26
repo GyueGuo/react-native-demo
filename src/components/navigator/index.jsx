@@ -44,7 +44,7 @@ const styles = AdaptStyleSheet.create({
     whiteSpace: 'nowrap'
   }
 })
-
+export const safeAreaHeight = extraHeight;
 export const navigatorHeight = extraHeight + wrapHeight;
 
 export default function Navigator ({ isLeftVisible = true, onBack, title, navigation, wrapStyles = {} }) {

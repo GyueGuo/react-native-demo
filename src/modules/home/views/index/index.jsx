@@ -1,5 +1,6 @@
 import React from 'react';
-import { SafeAreaView, Text, Button } from 'react-native'
+import { View, Button } from 'react-native'
+import Text from '../../../../components/text'
 import AdaptStyleSheet from '../../../../utils/adaptStyleSheet';
 
 const Index = ({ navigation }) => {
@@ -7,14 +8,14 @@ const Index = ({ navigation }) => {
     navigation.navigate('home/user')
   };
   return (
-    <SafeAreaView style={styles.view}>
-      <Text>index</Text>
-      <Button
-        onPress={handleGoUser}
-        title="Go user">
-      </Button>
-    </SafeAreaView>
-  );
+    <View style={styles.view}>
+        <Text>index</Text>
+        <Button
+          onPress={handleGoUser}
+          title="Go user">
+        </Button>
+      </View>
+    );
 };
 
 const styles = AdaptStyleSheet.create({

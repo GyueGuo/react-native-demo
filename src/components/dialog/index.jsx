@@ -17,11 +17,10 @@ const styles = AdaptStyleSheet.create({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: 'rgba(0, 0, 0, 1)',
   },
   container: {
     zIndex: 2,
-    position: 'relative',
     width: '75%',
     paddingTop: 20,
     paddingBottom: 20,

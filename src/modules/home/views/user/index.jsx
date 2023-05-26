@@ -31,18 +31,20 @@ const User = ({ navigation }) => {
   const handleDialogClose = useCallback(() => {
     setIsDialogVisible(false);
   }, []);
+
   const wrapStyles = useMemo(() => ({
     paddingTop: navigatorHeight,
   }), []);
-  return (
+
+  return [
     <View style={wrapStyles}>
-      <Navigator isLeftVisible={false} title="我的"/>
-      <View style={ styles.infoWrap }>
+      <Navigator isLeftVisible={false} title="我的" />
+      <View style={styles.infoWrap}>
         <Image source={defaultAvatar} style={styles.avatar} />
         <Text style={styles.nickname}>昵称</Text>
       </View>
-      <View style={ styles.menuList }>
-        <TouchableWithoutFeedback  onPress={handleNavigateToSetting}>
+      <View style={styles.menuList}>
+        <TouchableWithoutFeedback onPress={handleNavigateToSetting}>
           <View style={styles.menuItem}>
             <Text style={styles.content}>设置</Text>
             <Arrow style={styles.icon} />
@@ -56,15 +58,14 @@ const User = ({ navigation }) => {
           </View>
         </TouchableWithoutFeedback>
       </View>
-      <Dialog
-        visible={isDialogVisible}
-        onCancel={handleDialogClose}
-        onConfirm={handleDialogClose}
-        title="确定退出登录？"
-        // content="退出后续重新登录"
-      />
-    </View>
-  )
+    </View>,
+    <Dialog
+      visible={isDialogVisible}
+      onCancel={handleDialogClose}
+      onConfirm={handleDialogClose}
+      title="确定退出登录？"
+    />
+  ];
 }
 const styles = AdaptStyleSheet.create({
   infoWrap: {
